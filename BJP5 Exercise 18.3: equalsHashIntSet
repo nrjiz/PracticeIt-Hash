@@ -1,0 +1,22 @@
+public boolean equals(Object object){
+    if(object instanceof HashIntSet){
+        HashIntSet set=(HashIntSet) object;
+        
+        if(size != set.size())
+            return false;
+       
+        
+        for(int i = 0 ;i<elementData.length;i++){
+            Node node = elementData[i];
+            while(node!=null){
+                if(!set.contains(node.data)){
+                    return false;
+                }
+                   node=node.next;
+            }
+        }
+        
+        
+    }
+    return true;
+}
